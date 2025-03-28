@@ -120,7 +120,7 @@ input[type="number"] {
     text-overflow: ellipsis; /* Exibe "..." quando o texto ultrapassar o limite */
 }
 
-/* Aumentando o tamanho do container de montar pedidos */
+/* Ajustando o tamanho do container de montar pedidos */
 .container-montar-pedido {
     width: 90%; /* Aumentando a largura do container */
     max-width: 1200px; /* Definindo um limite máximo de largura */
@@ -139,6 +139,13 @@ input[type="number"] {
     display: flex;
     flex-wrap: wrap; /* Permitindo que os itens se ajustem em várias linhas se necessário */
     gap: 20px; /* Aumentando o espaço entre os elementos */
+}
+
+/* Ajuste para garantir que o container de produtos não ultrapasse a largura da tela */
+#pedido-screen {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Media Queries para dispositivos móveis */
