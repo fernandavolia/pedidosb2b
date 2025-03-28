@@ -5,6 +5,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .hidden {
@@ -16,7 +17,8 @@ body {
     background: #e91e63; /* Rosa bem forte para o container de login */
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
+    max-width: 400px; /* Limita a largura para telas pequenas */
     margin: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -26,18 +28,22 @@ body {
     background: white; /* Fundo branco para a tela de montar pedidos */
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
+    max-width: 900px; /* Limita a largura para telas pequenas */
     margin: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Inputs e botões */
 input, button {
     margin: 10px;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
+    width: 100%; /* Tornar inputs e botões responsivos */
 }
 
+/* Estilo do botão */
 button {
     background-color: #9c27b0;
     color: white;
@@ -49,6 +55,7 @@ button:hover {
     background-color: #7b1fa2;
 }
 
+/* Estilo para a tabela */
 table {
     width: 100%;
     margin: 20px auto;
@@ -66,6 +73,7 @@ th {
     color: white;
 }
 
+/* Input numérico */
 input[type="number"] {
     width: 60px;
 }
@@ -102,6 +110,7 @@ input[type="number"] {
     font-size: 20px; /* Tamanho da legenda da cidade */
     font-weight: bold; /* Em negrito */
 }
+
 /* Ajustando o tamanho da fonte para a parte de montar o pedido */
 .montar-pedido {
     font-size: 14px; /* Diminuindo o tamanho da fonte */
@@ -120,7 +129,7 @@ input[type="number"] {
     text-overflow: ellipsis; /* Exibe "..." quando o texto ultrapassar o limite */
 }
 
-/* Ajustando o tamanho do container de montar pedidos */
+/* Aumentando o tamanho do container de montar pedidos */
 .container-montar-pedido {
     width: 90%; /* Aumentando a largura do container */
     max-width: 1200px; /* Definindo um limite máximo de largura */
@@ -141,103 +150,48 @@ input[type="number"] {
     gap: 20px; /* Aumentando o espaço entre os elementos */
 }
 
-/* Ajuste para garantir que o container de produtos não ultrapasse a largura da tela */
-#pedido-screen {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Media Queries para dispositivos móveis */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
     body {
-        font-size: 14px;
+        padding: 10px;
     }
 
-    #login-screen {
-        width: 90%;
-    }
-
-    #pedido-screen {
-        width: 90%;
-    }
-
-    /* Ajustando os campos de entrada e botões */
-    input, button {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .imagem-container {
-        margin-bottom: 15px;
-    }
-
-    .logo-imagem {
-        width: 80%;
-        max-width: 250px;
-    }
-
-    .legenda {
-        font-size: 16px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    /* Ajustes na parte de montar o pedido */
-    .container-montar-pedido {
+    #login-screen, #pedido-screen {
         width: 100%;
         padding: 15px;
     }
 
-    .montar-pedido {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h3 {
-        font-size: 14px;
-    }
-
     input, button {
-        font-size: 14px;
-        padding: 10px;
+        width: 100%;
+        font-size: 14px; /* Ajustando o tamanho da fonte para telas menores */
     }
 
-    .container-montar-pedido {
-        padding: 10px;
-    }
-
+    /* Ajustando o logo para se adaptar melhor a telas menores */
     .logo-imagem {
-        width: 70%;
-        max-width: 200px;
+        width: 100%;
+        max-width: 250px; /* Garantindo que a logo não fique maior que isso */
     }
 
     .legenda {
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    button {
-        font-size: 14px;
-        padding: 12px;
+    .titulo {
+        font-size: 24px; /* Reduzindo o tamanho do título para telas menores */
+    }
+
+    .cidade {
+        font-size: 18px;
+    }
+
+    .container-montar-pedido {
+        width: 100%; /* Garantindo que o container ocupe toda a largura disponível */
+        max-width: 100%; /* Sem limite máximo */
+        padding: 10px; /* Ajustando o padding para telas menores */
+    }
+
+    /* Ajustando o layout do pedido para telas menores */
+    .montar-pedido {
+        gap: 10px; /* Menos espaço entre os elementos */
     }
 }
